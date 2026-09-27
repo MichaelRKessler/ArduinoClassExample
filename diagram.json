@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "author": "Anonymous",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 120, "left": 100, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 148.8,
+      "left": 37.85,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 169.2,
+      "left": 23,
+      "rotate": 270,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "sonar",
+      "top": -65.7,
+      "left": 264.7,
+      "attrs": { "distance": "60" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -41.2,
+      "left": 31.6,
+      "rotate": 180,
+      "attrs": {}
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 37.6, "left": 203.8, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": 211.2, "left": 57, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd3", "top": 38.4, "left": 373.8, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 19.96, "left": 297.6, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc2", "top": -9.64, "left": 223.6, "attrs": {} }
+  ],
+  "connections": [
+    [ "uno:13", "r1:1", "green", [ "v-33", "h-157.8" ] ],
+    [ "r1:2", "led1:A", "green", [ "v-10" ] ],
+    [ "sonar:TRIG", "uno:2", "blue", [ "v80", "h80" ] ],
+    [ "sonar:ECHO", "uno:3", "purple", [ "v48", "h-29" ] ],
+    [ "servo1:PWM", "uno:9", "orange", [ "h9.6", "v-29.8", "h38.4", "v116", "h13.4" ] ],
+    [ "sonar:VCC", "vcc1:VCC", "red", [ "v23.9", "h-25.7" ] ],
+    [ "gnd3:GND", "sonar:GND", "black", [ "v0" ] ],
+    [ "gnd2:GND", "led1:C", "black", [ "v0" ] ],
+    [ "servo1:GND", "gnd1:GND", "black", [ "h12.4", "v28" ] ],
+    [ "vcc2:VCC", "servo1:V+", "red", [ "v9.6" ] ]
+  ],
+  "dependencies": {}
+}

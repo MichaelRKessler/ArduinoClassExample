@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = "build/ArduinoClassExample.ino.hex"
+elf = "build/ArduinoClassExample.ino.elf"
